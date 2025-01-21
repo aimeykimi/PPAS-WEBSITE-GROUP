@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F9E795;
+    color: #333;
+  }
+
+  .topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: #F96167; 
+    overflow: hidden;
+    padding: 0 20px;
+  }
+  
+  .nav-logo {
+    max-width: 80px; 
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+  }
+  
+  .topnav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    display: inline-block;
+  }
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .section-title {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin: 40px 0 20px;
+  }
+
+  .staff-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap; 
+  }
+
+  .staff-member {
+    background-color: #FFF9BF; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 calc(20% - 20px); 
+  }
+
+  .staff-member p {
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  }
+
+  .staff-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .staff-member h4 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  /* Maps Section */
+  .maps-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .map {
+    flex: 1 1 calc(33.33% - 20px);
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .contact-section {
+    background-color: #F9E795;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+
+  .contact-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contact-details p {
+    font-size: 16px;
+  }
+
+  .contact-details a {
+    text-decoration: none;
+    color: #ff0000;
+    font-weight: bold;
+  }
+
+  .contact-details a:hover {
+    color: #ff0000;
+  }
+
+.footer {
+    background-color: #F96167;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #ffffff;
+    text-align: center;
+  }

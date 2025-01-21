@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/review.css">
+  <title>PPAS Website</title>
+</head>
+<body>
+ <div class="topnav">
+    <img src="images/ppas logo.png" alt="PPAS Logo" class="nav-logo">
+    <div class="nav-links">
+      <a class="active" href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="programs.html">Programs</a>
+      <a href="contactus.html">Contact Us</a>
+      <a href="facility.html">Facility</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="review.html">Review</a>
+    </div>
+  </div>
+    
+  <header>
+        <h1>Library Reviews</h1>
+    </header>
+
+
+<div class="write-review">
+    <h2>Write Your Review</h2>
+    <div class="star-rating">
+        <input type="radio" name="rating" id="star5" value="5">
+        <label for="star5">&#9733;</label>
+        <input type="radio" name="rating" id="star4" value="4">
+        <label for="star4">&#9733;</label>
+        <input type="radio" name="rating" id="star3" value="3">
+        <label for="star3">&#9733;</label>
+        <input type="radio" name="rating" id="star2" value="2">
+        <label for="star2">&#9733;</label>
+        <input type="radio" name="rating" id="star1" value="1">
+        <label for="star1">&#9733;</label>
+    </div>
+    <textarea id="review-body" rows="5" placeholder="Share your experience..."></textarea>
+    <input id="review-author" type="text" placeholder="Enter your name">
+    <button id="submit-review" type="button">Submit Review</button>
+</div>
+
+
+<div class="home-button-container">
+    <a href="index.html" class="home-button">Home</a>
+</div>
+
+<script>
+    const reviewContainer = document.getElementById('review-container');
+    const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+    function loadReviews() {
+        reviewContainer.innerHTML = '';
+        storedReviews.forEach((review, index) => addReviewToPage(review, index));
+    }
+
+    function addReviewToPage(review, index) {
+        const reviewElement = document.createElement('div');
+        reviewElement.classList.add('review');
+        reviewElement.innerHTML = `
+            <div class="review-title">${review.title || 'Review'}</div>
+            <div class="review-rating">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</div>
+            <div class="review-body">${review.body}</div>
+            <div class="review-author">- ${review.author}</div>
+            <div class="review-date">${review.date}</div>
+        `;
+        reviewContainer.appendChild(reviewElement);
+    }
+
+    document.getElementById('submit-review').addEventListener('click', function () {
+        const body = document.getElementById('review-body').value.trim();
+        const author = document.getElementById('review-author').value.trim();
+        const rating = document.querySelector('input[name="rating"]:checked');
+
+        if (!body || !author || !rating) 
+    {
+            alert('Please fill out all fields and select a rating.');
+            return;
+            }
+
+        const date = new Date().toLocaleDateString();
+
+        const newReview = 
+    {
+            title: "Review",
+            rating: parseInt(rating.value),
+            body,
+            author,
+            date,
+            };
+
+        storedReviews.push(newReview);
+        localStorage.setItem('reviews', JSON.stringify(storedReviews));
+
+        addReviewToPage(newReview);
+        document.getElementById('review-body').value = '';
+        document.getElementById('review-author').value = '';
+        document.querySelectorAll('input[name="rating"]').forEach(input => (input.checked = false));
+    });
+
+    window.addEventListener('load', loadReviews);
+</script>
+
+<div class="footer">
+    <p>© 2025 PERPUSTAKAAN PERBADANAN AWAM SELANGOR. All rights reserved.</p>
+  </div>
+
+</body>
+</html>

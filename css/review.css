@@ -1,0 +1,222 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F9E795;
+    color: #333;
+  }
+
+   header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    
+    
+}
+
+  .topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background-color: #F96167; 
+    overflow: hidden;
+    padding: 0 20px; 
+  }
+  
+  .nav-logo {
+    max-width: 80px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+  }
+  .topnav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    display: inline-block;
+  }
+
+  header 
+  {
+          background: #F96167;
+          padding: 50px;
+          text-align: center;
+          color: white;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 
+  {
+          margin: 0;
+          font-size: 2em;
+      }
+
+      .review-container 
+  {
+          max-width: 850px;
+          margin: 30px auto;
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .review 
+  {
+          border-bottom: 3px solid #ddd;
+          padding: 25px 0;
+          margin-bottom: 30px;
+      }
+
+      .review:last-child 
+  {
+          border-bottom: none;
+      }
+
+      .review-title 
+  {
+          font-size: 1.7em;
+          color: #0f4c75;
+          font-weight: bold;
+      }
+
+      .review-body 
+  {
+          margin: 15px 0;
+          color: #ffffff;
+      }
+
+      .review-author 
+  {
+          font-style: italic;
+          color: #777;
+      }
+
+      .review-rating 
+  {
+          color: #ffd700;
+          font-size: 1.5em;
+      }
+
+      .review-date 
+  {
+          color: #555;
+          font-size: 0.9em;
+          margin-top: 5px;
+      }
+
+      .write-review 
+  {
+          margin-top: 50px;
+          text-align: center;
+          background: #F9E795;
+          padding: 40px;
+          border-radius: 10px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          border: 2px solid white;
+      }
+
+      .write-review textarea,
+      .write-review input,
+      .write-review button 
+  {
+          width: 80%;
+          margin: 15px 0;
+          padding: 15px;
+          font-size: 1.1em;
+          border-radius: 10px;
+          border: 2px solid #007991;
+      }
+
+      .write-review button 
+  {
+          background-color: #F96167;
+          color: rgb(255, 255, 255);
+          border: none;
+          cursor: pointer;
+          font-weight: 700;
+          text-transform: uppercase;
+          transition: background-color 0.3s ease-in-out;
+      }
+
+      .write-review button:hover 
+  {
+          background-color: #192a51;
+      }
+
+     
+      .star-rating 
+  {
+          display: flex;
+          justify-content: center;
+          direction: rtl; 
+      }
+
+      .star-rating input[type="radio"] 
+  {
+          display: none;
+      }
+
+      .star-rating label 
+  {
+          font-size: 3.5em;
+          color: #ff0000;
+          cursor: pointer;
+          transition: transform 0.2s ease, color 0.3s;
+      }
+
+      .star-rating input[type="radio"]:checked ~ label 
+  {
+          color: #ffd700;
+          transform: scale(1.3);
+      }
+
+      .star-rating label:hover,
+      .star-rating label:hover ~ label 
+  {
+          color: #ffd700;
+      }
+
+      .star-rating input[type="radio"]:checked ~ label ~ label 
+  {
+          transform: scale(1); 
+
+        .home-button-container 
+  {
+          margin-top: auto;
+          text-align: center;
+          padding: 20px;
+          background: #0f4c75;
+      }
+
+      .home-button 
+  {
+          background-color: #007991;
+          color: white;
+          text-decoration: none;
+          font-size: 1.2em;
+          padding: 15px 30px;
+          border-radius: 10px;
+          text-transform: uppercase;
+          transition: background-color 0.3s ease;
+      }
+
+      .home-button:hover 
+  {
+          background-color: #005f6b;
+      }
+    }
+
+  .footer {
+    background-color: #F96167;
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .footer p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #ffffff;
+  }

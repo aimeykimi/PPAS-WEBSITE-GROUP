@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <title>PPAS Website</title>
+</head>
+<body>
+ <div class="topnav">
+    <img src="images/ppas logo.png" alt="PPAS Logo" class="nav-logo">
+    <div class="nav-links">
+      <a class="active" href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="programs.html">Programs</a>
+      <a href="contactus.html">Contact Us</a>
+      <a href="facility.html">Facility</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="review.html">Review</a>
+    </div>
+  </div>
+  
+  <div class="container">
+    <section class="events-section">
+        <h2>Past Events</h2>
+        <div class="event-container">
+            <div class="event-box">
+                <h3>Selangor International Book Fair 2024</h3>
+                <img src="images/sibf 2.jpeg" alt="Selangor International Book Fair 2024">
+                <p><strong>Date:</strong> 27 November - 3 December 2024</p>
+                <p>Children created beautiful rainbow artwork with various materials, encouraging creativity and color recognition. It was a vibrant and fun-filled day for all.</p>
+            </div>
+            <div class="event-box">
+                <h3>School Holiday @Pustaka Raja Tun Uda</h3>
+                <img src="images/shedited.jpeg" alt="School Holiday">
+                <p><strong>Date:</strong> 27 May - 4 June 2023</p>
+                <p>Our little gardeners planted trees in the school yard, learning about nature and the environment while contributing to the green space around them.</p>
+            </div>
+            <div class="event-box">
+                <h3>Selangor Children's Book Fair 2024</h3>
+                <img src="images/scbedited.jpeg" alt="children book fair">
+                <p><strong>Date:</strong> 24 July - 28 July 2024</p>
+                <p>Parents and children gathered for a special story time event, fostering a love for reading and promoting parent-child bonding.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-section">
+        <h2>Present Events</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Countdown</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">Bazar Buku Hulu PPAS</td>
+                    <td>January 19, 2025</td>
+                    <td>Kicking off 2025, PPAS is bringing back the Bazar Buku, this time at Perpustakaan Syed Mashor in Kuala Kubu Bharu, Hulu Selangor. This event offers a variety of books and is a great opportunity for book enthusiasts to explore new reads.</td>
+                    <td class="countdown" id="countdown1"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </section>
+
+    <section class="suggestions-section">
+        <h2>Event Suggestions</h2>
+        <form class="suggestion-form">
+            <input type="text" id="suggestion-name" placeholder="Your name (optional)">
+            <textarea id="suggestion-text" placeholder="Your event suggestion..."></textarea>
+            <button type="button" id="submit-suggestion">Submit Suggestion</button>
+        </form>
+
+        <div class="comments-section">
+            <h3>Recent Suggestions</h3>
+            <div class="comment show">
+                <strong>Ahmad:</strong> "How about organizing a 'Selangor Culture Day' to showcase the rich traditions and arts of Selangor?"
+            </div>
+            <div class="comment show">
+                <strong>Siti:</strong> "It would be great to have a 'Reading Marathon' event where participants can win prizes for completing books!"
+            </div>
+            <div class="comment show">
+                <strong>Raj:</strong> "What about a 'Digital Literacy Workshop' to help the community learn about using technology effectively?"
+            </div>
+        </div>
+        
+        </div>
+    </section>
+
+    <div id="js-alert" class="js-alert">
+        Join us for these exciting events and make great memories with your children!
+    </div>
+    
+    <a href="index.html" class="back-button">Back</a>
+    
+
+</div>
+
+<script>
+    function updateCountdown(eventId, eventDate) {
+        var countdownElement = document.getElementById(eventId);
+        var now = new Date().getTime();
+        var timeLeft = eventDate - now;
+
+        if (timeLeft <= 0) {
+            countdownElement.innerHTML = "Event Started!";
+            return;
+        }
+
+        var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+        setTimeout(function() {
+            updateCountdown(eventId, eventDate);
+        }, 1000);
+    }
+
+    var event1Date = new Date("January 19, 2025 10:00:00").getTime();
+    var event2Date = new Date("March 15, 2025 13:00:00").getTime();
+    var event3Date = new Date("May 11, 2025 09:00:00").getTime();
+    var event4Date = new Date("June 18, 2025 09:00:00").getTime();
+
+    updateCountdown("countdown1", event1Date);
+    updateCountdown("countdown2", event2Date);
+    updateCountdown("countdown3", event3Date);
+    updateCountdown("countdown4", event4Date);
+
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('#js-alert').fadeIn();
+        }, 3000);
+
+        setTimeout(function() {
+            $('#js-alert').fadeOut();
+        }, 8000);
+
+        $('#submit-suggestion').click(function() {
+            var name = $('#suggestion-name').val();
+            var suggestion = $('#suggestion-text').val();
+            if (suggestion) {
+                var commentHtml = '<div class="comment show"><strong>' + (name || 'Anonymous') + ':</strong> "' + suggestion + '"</div>';
+                $('.comments-section').append(commentHtml);
+                $('#suggestion-name').val('');
+                $('#suggestion-text').val('');
+                setTimeout(function() {
+                    $('.comment').addClass('show');
+                }, 100);
+            }
+        });
+
+        $(window).on('scroll', function() {
+            $('.events-section, .suggestions-section').each(function() {
+                var elementOffset = $(this).offset().top;
+                var windowHeight = $(window).scrollTop() + $(window).height();
+                if (windowHeight > elementOffset + 100) {
+                    $(this).addClass('show');
+                }
+            });
+        });
+
+        $(window).trigger('scroll'); // Trigger the scroll function to show elements on page load
+    });
+    $(window).on('scroll', function() {
+$('table tbody tr').each(function() {
+    var elementOffset = $(this).offset().top;
+    var windowHeight = $(window).scrollTop() + $(window).height();
+    if (windowHeight > elementOffset + 100) {
+        $(this).addClass('show');
+    }
+});
+});
+
+</script>
+<div class="footer">
+    <p>© 2025 PERPUSTAKAAN PERBADANAN AWAM SELANGOR. All rights reserved.</p>
+  </div>
+
+</body>
+</html>

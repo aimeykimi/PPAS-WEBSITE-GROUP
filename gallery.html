@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/gallery.css">
+  <title>PPAS Website</title>
+</head>
+<body>
+ <div class="topnav">
+    <img src="images/ppas logo.png" alt="PPAS Logo" class="nav-logo">
+    <div class="nav-links">
+      <a class="active" href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="programs.html">Programs</a>
+      <a href="contactus.html">Contact Us</a>
+      <a href="facility.html">Facility</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="review.html">Review</a>
+    </div>
+  </div>
+
+<h2 class="page-title">Gallery of PPAS</h2>
+
+
+<div class="intro-container">
+    <p class="intro-text">
+      Welcome to our Gallery! Here, we celebrate the vibrant and creative spirit of our library through a collection of photos that capture the daily joys and learning experiences of our young learners. From colorful art projects and exciting classroom activities to outdoor adventures and group interactions, our gallery showcases the moments that make each day special. Our dedicated teachers foster an environment where curiosity and imagination thrive, and these images reflect the warmth and enthusiasm that define our community.
+      <br><br>
+      Explore the heart of our library through these images, which highlight the engaging and dynamic experiences we offer. Whether it's discovering new things, collaborating with friends, or simply having fun, every photo tells a story of growth, friendship, and discovery. We invite you to take a closer look and get a glimpse into the nurturing and inspiring environment where your child will learn, play, and grow.
+    </p>
+  </div>
+
+  <div class="row"> 
+    <div class="column">
+      <img src="images/gallery 1.jpeg" alt="Captions" onclick="openModal(this, 'Gallery 1');">
+      <img src="images/gallery 2.jpeg" alt="Captions" onclick="openModal(this,'Gallery 2');">
+      <img src="images/gallery 3.jpeg" alt="Captions" onclick="openModal(this,'Gallery 3');">
+      <img src="images/gallery 4.jpeg" alt="Captions" onclick="openModal(this, 'Gallery 4');">
+      <img src="images/gallery 5.jpeg" alt="Captions" onclick="openModal(this,'Gallery 5');">
+      <img src="images/gallery 6.jpeg" alt="Captions" onclick="openModal(this,'Gallery 6');">
+      <img src="images/gallery 7.jpeg" alt="Captions" onclick="openModal(this,'Gallery 7');">
+      <img src="images/gallery 8.jpeg" alt="Captions" onclick="openModal(this,'Gallery 8');">
+      <img src="images/gallery 9.jpeg" alt="Captions" onclick="openModal(this,'Gallery 9');">
+      <img src="images/gallery 10.jpeg" alt="Captions" onclick="openModal(this,'Gallery 10');">
+      <img src="images/gallery 11.jpeg" alt="Captions" onclick="openModal(this,'Gallery 11');">
+      <img src="images/gallery 12.jpeg" alt="Captions" onclick="openModal(this,'Gallery 12');">
+    </div>
+    
+
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="modal-caption" id="caption"></div>
+  </div>
+
+  <h2 class="page-title">Memories of PPAS</h2>
+
+
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/O1Y7_f9lpqk?si=Dwjk7nzyN05PKJal" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+
+<script>
+    function openModal(img, captionText) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("modalImage");
+    var caption = document.getElementById("caption");
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    caption.innerHTML = captionText;
+  }
+
+  function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
+
+  var elem = document.getElementById("myvideo");
+
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+  }
+</script>
+  <div class="footer">
+    <p>© 2025 PERPUSTAKAAN PERBADANAN AWAM SELANGOR. All rights reserved.</p>
+  </div>
+
+</body>
+</html>
